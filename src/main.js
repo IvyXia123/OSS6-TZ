@@ -5,9 +5,11 @@ import Qs from 'qs'
 import VueRouter from 'vue-router'
 import RouterConfig from './router/RouterConfig'   //引入路由配置
 import ossFn from './js/ossFn'    //引入ajax方法
-require('!style-loader!css-loader!less-loader!./less/common.less');
-// import layuiSrc from 'layui-src/dist/layui';
-// require('layui-src/dist/layui');
+require('!style-loader!css-loader!less-loader!./less/common.less')
+
+//引入iconFont字体图标：
+import './assets/iconFont/iconfont.css'
+import './assets/iconFont/iconfont.js'
 
 // Vue.prototype.baseUrl='http://192.169.10.134:8080/topcheer-oss/';
 Vue.prototype.baseUrl = 'http://192.169.2.250:8880/OSS';
@@ -19,14 +21,6 @@ Vue.prototype.oss = ossFn;
 Vue.use(VueRouter);
 
 const router = new VueRouter(RouterConfig);
-
-// router.beforeEach((to,from,next)=>{
-//   console.log(to.name);
-//   if(to.name=='servicePlatform'){
-//     this.showServicePlatformNav=false;
-//   }
-//   next();
-// })
 
 new Vue({
   router,

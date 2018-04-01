@@ -2,7 +2,7 @@
   <div id="login">
     <div class="login-wrapper">
       <div class="header">
-        <img class="logoImg" src="./../assets/logo.png" alt="" title=""/>
+        <img class="logoImg" src="../assets/imgs/logo.png" alt="" title=""/>
         <span class="title">{{title}}</span>
       </div>
       <!--表单-->
@@ -10,7 +10,7 @@
         <!--用户名-->
         <div class="account-wrapper input-wrapper">
           <div class="text-wrapper left-wrapper">
-            <img class="icons" src="./../assets/icon1.png" alt="" title=""/>
+            <img class="icons" src="../assets/imgs/icon1.png" alt="" title=""/>
             <span class="text">用户名</span>
           </div>
           <div class="right-wrapper">
@@ -22,7 +22,7 @@
         <!--密码-->
         <div class="password-wrapper input-wrapper">
           <div class="text-wrapper left-wrapper">
-            <img class="icons" src="./../assets/icon2.png" alt="" title=""/>
+            <img class="icons" src="../assets/imgs/icon2.png" alt="" title=""/>
             <span class="text">密&nbsp;&nbsp;&nbsp;码</span>
           </div>
           <div class="right-wrapper">
@@ -92,7 +92,7 @@
     position:relative;
     .w(100%);
     .h(100%);
-    background:url("../assets/login.png");
+    background:url("../assets/imgs/login.png");
     background-size:100% 100%;
     .login-wrapper{
       position:absolute;

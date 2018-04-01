@@ -3,33 +3,15 @@
     <div class="leftWrapper">
       <div class="leftContent">
         <div class="topWrapper">
-
+          <div class="img">
+            <img src="./../assets/imgs/home_photo.png"/>
+          </div>
+          <div class="info">
+            <span>小花</span>
+          </div>
         </div>
         <div class="bottomWrapper">
-          <!--<ul class="layui-nav layui-nav-tree"  lay-filter="test">-->
-          <!--<li class="layui-nav-item layui-nav-itemed">-->
-          <!--<a class="" href="javascript:;">所有商品</a>-->
-          <!--<dl class="layui-nav-child">-->
-          <!--<dd><a href="javascript:;">列表一</a></dd>-->
-          <!--<dd><a href="javascript:;">列表二</a></dd>-->
-          <!--<dd><a href="javascript:;">列表三</a></dd>-->
-          <!--<dd><a href="">超链接</a></dd>-->
-          <!--</dl>-->
-          <!--</li>-->
-          <!--<li class="layui-nav-item">-->
-          <!--<a href="javascript:;">解决方案</a>-->
-          <!--<dl class="layui-nav-child">-->
-          <!--<dd><a href="javascript:;">列表一</a></dd>-->
-          <!--<dd><a href="javascript:;">列表二</a></dd>-->
-          <!--<dd><a href="">超链接</a></dd>-->
-          <!--</dl>-->
-          <!--</li>-->
-          <!--<li class="layui-nav-item"><a href="">云市场</a></li>-->
-          <!--<li class="layui-nav-item"><a href="">发布商品</a></li>-->
-          <!--</ul>-->
-
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
-            <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
             <li class="layui-nav-item layui-nav-itemed">
               <a href="javascript:;">默认展开</a>
               <dl class="layui-nav-child">
@@ -78,6 +60,32 @@
 
       </div>
     </div>
+
+
+
+    <!--<form class="layui-form" action="">-->
+      <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">输入框</label>-->
+        <!--<div class="layui-input-block">-->
+          <!--<input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="layui-form-item">-->
+        <!--<div class="layui-input-block">-->
+          <!--<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>-->
+          <!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<select name="city" lay-verify="">-->
+        <!--<option value="">请选择一个城市</option>-->
+        <!--<option value="010">北京</option>-->
+        <!--<option value="021">上海</option>-->
+        <!--<option value="0571">杭州</option>-->
+      <!--</select>-->
+    <!--</form>-->
+
+
+
   </div>
 </template>
 
@@ -137,10 +145,22 @@
           // });
 
         });
-      },
+      }
     },
     mounted() {
       this.navFn();
+      console.log(1);
+
+//
+//      layui.use(['layer','form'], function(){
+//        var form = layui.form;
+//
+//        //监听提交
+//        form.on('submit(formDemo)', function(data){
+//          layer.msg(JSON.stringify(data.field));
+//          return false;
+//        });
+//      });
 
       //
       // //表格数据请求：
@@ -173,14 +193,32 @@
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
         .topWrapper {
           .w(100%);
-          .h(120px);
+          .h(150px);
+          .p(30px 20px 20px 20px);
           .b(@contentBg);
+          box-sizing:border-box;
           border-top-left-radius: 7px;
           border-top-right-radius: 7px;
+          .img{
+            .h(60%);
+            text-align:center;
+            img{
+              .h(100%);
+            }
+          }
+          .info{
+            display: flex;
+            .h(40%);
+            color:#fff;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+          }
         }
         .bottomWrapper {
           .w(100%);
-          .h(calc(~"100% - 120px"));
+          .h(calc(~"100% - 150px"));
           .b(@whiteColor);
           border-bottom-left-radius: 7px;
           border-bottom-right-radius: 7px;

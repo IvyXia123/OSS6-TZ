@@ -3,9 +3,10 @@
     <!--头部导航-->
     <div class="header">
       <div class="nameWrapper">
-        <img class="comLogo" src="./../assets/logo.png"/>
+        <img class="comLogo" src="../assets/imgs/logo.png"/>
         <span class="comName">{{companyName}}</span>
       </div>
+
       <div class="headerNavWrapper">
         <router-link class="dataManage" tag="a" :to="{name:'dataManagement'}">
           报送数据管理
@@ -15,7 +16,10 @@
           一站式服务平台
           <span class="line" v-show="currentNav=='servicePlatform'"></span>
         </router-link>
-        <input class="searchBox" type="text" placeholder="请输入关键字"/>
+        <div class="input-wrapper">
+          <i class="iconfont icon-search"></i>
+          <input class="searchBox" type="text" placeholder="请输入关键字"/>
+        </div>
       </div>
       <div class="basicInfoWrapper">
         <span class="time">2018-03-28 星期四 09:45:27</span>
@@ -25,7 +29,7 @@
 
         <ul class="layui-nav layui-layout-right" id="shouxuan">
           <li class="layui-nav-item layui-this" id="moreIcon">
-            <a href="javascript:;"><img src="./../assets/home_preferences.png" class="moreIcon">首选项<span
+            <a href="javascript:;"><img src="../assets/imgs/home_preferences.png" class="moreIcon">首选项<span
               class="layui-nav-more"></span></a>
             <dl class="layui-nav-child layui-anim layui-anim-upbit">
               <dd><a href="javascript:;">修改密码</a></dd>
@@ -209,7 +213,7 @@
       .w(100%);
       /*min-width:1240px;*/
       .h(60px);
-      .p(10px 40px 10px 20px);
+      .p(10px 20px 10px 20px);
       /*overflow: hidden;*/
       box-sizing: border-box;
       background: @headerBgColor;
@@ -237,6 +241,36 @@
         left: 320px;
         box-sizing: border-box;
         overflow: hidden;
+        .input-wrapper{
+          position:relative;
+          .d-i(inline-block);
+          float: right;
+          .h(30px);
+          .w(160px);
+          .p(3px 10px);
+          .icon-search{
+            position:absolute;
+            top:8px;
+            left:22px;
+            .f-s(20px);
+            color:#fff;
+            cursor:pointer;
+          }
+          .searchBox {
+            .h(100%);
+            .l-h(24px);
+            padding-left:40px;
+            box-sizing: border-box;
+            outline: none;
+            color: @whiteColor;
+            border-radius: 15px;
+            border: 1px solid @inputBorder;
+            .b(@inputBg);
+            &::-webkit-input-placeholder {
+              color: @whiteColor;
+            }
+          }
+        }
         .dataManage, .servicePaltform {
           position: relative;
           .h(30px);
@@ -256,24 +290,9 @@
             border-bottom: 2px solid #fff;
           }
         }
-        .searchBox {
-          float: right;
-          .h(30px);
-          .p(3px 10px);
-          .l-h(24px);
-          margin-top: 5px;
-          box-sizing: border-box;
-          outline: none;
-          color: @whiteColor;
-          border-radius: 15px;
-          border: 1px solid @inputBorder;
-          .b(@inputBg);
-          &::-webkit-input-placeholder {
-            color: @whiteColor;
-          }
-        }
       }
       .basicInfoWrapper {
+        position: relative;
         .w(300px);
         .h(100%);
         text-align: right;
@@ -286,7 +305,29 @@
           .f-s(14px);
         }
         .time {
-          margin-right: 15px;
+          margin-right: 100px;
+        }
+        ul.layui-nav{
+          position:absolute;
+          right:0;
+          top:0;
+          .d-i(inline-block);
+          .b(@headerBgColor);
+          .layui-nav-item{
+            .h(40px);
+            a{
+              .h(40px);
+              .l-h(40px);
+            }
+            dl.layui-anim-upbit{
+              top:50px;
+              right:-35px;
+              text-align:left;
+            }
+            &:after{
+              .b(@headerBgColor);
+            }
+          }
         }
         .moreIcon {
           .w(15px);
@@ -294,9 +335,6 @@
           vertical-align: middle;
         }
         .moreChoice {
-        }
-        .layui-nav {
-          .d-i(inline-block);
         }
       }
     }
