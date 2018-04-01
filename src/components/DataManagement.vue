@@ -82,23 +82,25 @@
 </template>
 
 <script>
-  import TableCom from './common/Table'
+  import TableCom from './common/Table';
+
   export default {
     name: "data-manage",
     data() {
       return {}
     },
-    components:{
-      'table-com':TableCom
+    components: {
+      'table-com': TableCom
     },
     methods: {
       //导航：
       navFn() {
+
         layui.use('element', function () {
           var $ = layui.jquery
             , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-
           //触发事件
+
           var active = {
             tabAdd: function () {
               //新增一个Tab项
@@ -139,6 +141,7 @@
     },
     mounted() {
       this.navFn();
+
       //
       // //表格数据请求：
       // this.axios.get("./src/json/data.json").then((res) => {
@@ -190,20 +193,20 @@
               .b(@navBg);
               a {
                 color: @blackColor;
-                &:hover{
+                &:hover {
                   .b(@navBg);
-                  color:@whiteColor;
+                  color: @whiteColor;
                 }
-                .layui-nav-child{
-                  border-top-color:gray!important;
+                .layui-nav-child {
+                  border-top-color: gray !important;
                 }
               }
-              .layui-nav-child{
-                .b(@whiteColor)!important;
+              .layui-nav-child {
+                .b(@whiteColor) !important;
               }
             }
-            li.layui-nav-itemed{
-              a{
+            li.layui-nav-itemed {
+              a {
 
               }
             }
@@ -244,8 +247,8 @@
             &:after {
               .h(47px);
             }
-            .layui-icon{
-              color:@whiteColor;
+            .layui-icon {
+              color: @whiteColor;
             }
           }
         }

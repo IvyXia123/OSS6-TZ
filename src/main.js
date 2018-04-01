@@ -16,10 +16,17 @@ Vue.prototype.axios = Axios;
 Vue.prototype.qs = Qs;
 Vue.prototype.oss = ossFn;
 
-
 Vue.use(VueRouter);
 
 const router = new VueRouter(RouterConfig);
+
+// router.beforeEach((to,from,next)=>{
+//   console.log(to.name);
+//   if(to.name=='servicePlatform'){
+//     this.showServicePlatformNav=false;
+//   }
+//   next();
+// })
 
 new Vue({
   router,
